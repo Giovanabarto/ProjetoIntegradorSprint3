@@ -1,5 +1,5 @@
 // ==========================
-// CARROSSEL
+// CARROSSEL (CORRIGIDO)
 // ==========================
 
 const slider = document.querySelector(".slider");
@@ -9,73 +9,71 @@ const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
 let index = 0;
+let autoplay = null;
 
-// Atualiza o slide
+// Atualiza a exibição do slide
 function mostrarSlide() {
+    // Como cada slide ocupa 25% do .slider (que mede 400%), mover -25% por índice desloca exatamente 1 slide inteiro
+    const porcentagem = index * (100 / slides.length);
+    slider.style.transform = `translateX(-${porcentagem}%)`;
 
-    slider.style.transform = `translateX(-${index * 100}vw)`;
-    slider.style.transition = "0.8s ease";
-
+    // Atualiza as bolinhas ativas
     dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-
+    if (dots[index]) {
+        dots[index].classList.add("active");
+    }
 }
 
-// Próximo slide
 function proximoSlide() {
-
-    index++;
-
-    if(index >= slides.length){
-        index = 0;
-    }
-
+    index = (index + 1) % slides.length;
     mostrarSlide();
-
 }
 
-// Slide anterior
 function slideAnterior() {
-
-    index--;
-
-    if(index < 0){
-        index = slides.length - 1;
-    }
-
+    index = (index - 1 + slides.length) % slides.length;
     mostrarSlide();
-
 }
 
 // Botões
-next.addEventListener("click", proximoSlide);
-prev.addEventListener("click", slideAnterior);
+if (next) next.addEventListener("click", () => {
+    proximoSlide();
+    reiniciarAutoplay();
+});
+
+if (prev) prev.addEventListener("click", () => {
+    slideAnterior();
+    reiniciarAutoplay();
+});
 
 // Clique nas bolinhas
-dots.forEach((dot, i)=>{
-
-    dot.addEventListener("click", ()=>{
-
+dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
         index = i;
         mostrarSlide();
-
+        reiniciarAutoplay();
     });
-
 });
 
-// Troca automática
-let autoplay = setInterval(proximoSlide, 5000);
+// Controle de tempo de transição
+function iniciarAutoplay() {
+    pararAutoplay();
+    autoplay = setInterval(proximoSlide, 3000);
+}
 
-// Pausa quando o mouse entra
-slider.addEventListener("mouseenter", ()=>{
+function pararAutoplay() {
+    if (autoplay) clearInterval(autoplay);
+}
 
-    clearInterval(autoplay);
+function reiniciarAutoplay() {
+    pararAutoplay();
+    iniciarAutoplay();
+}
 
-});
+// Eventos de mouse para pausar
+if (slider) {
+    slider.addEventListener("mouseenter", pararAutoplay);
+    slider.addEventListener("mouseleave", iniciarAutoplay);
+}
 
-// Continua quando o mouse sai
-slider.addEventListener("mouseleave", ()=>{
-
-    autoplay = setInterval(proximoSlide, 5000);
-
-});
+// Inicialização
+iniciarAutoplay();

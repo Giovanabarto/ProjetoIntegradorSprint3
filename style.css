@@ -1,535 +1,414 @@
 /* ==========================
-   RESET
+   RESET & BASE
 ========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    overflow-x:hidden;
+body {
+    overflow-x: hidden;
 }
 
 /* ==========================
    HEADER
 ========================== */
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:10px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(10px);
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgb(248, 123, 173, 0.15);
+    
+   
 }
 
-.logo img{
+.logo img {
     width: 110px;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:35px;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
 }
 
-nav a{
-    text-decoration:none;
-    color:#5a3726;
-    font-size:17px;
-    font-weight:600;
-    transition:.3s;
+nav a {
+    text-decoration: none;
+    color: #5a3726;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-nav a:hover{
-    color:#ff6ea9;
+nav a:hover {
+    color: #ff6ea9;
 }
 
-/* ==========================
-   BANNER
-========================== */
-
-.banner{
-    width:100%;
-    height:650px;
-    overflow:hidden;
-    position:relative;
-}
-
-.slider{
-    display:flex;
-    width:300%;
-    height:100%;
-}
-
-/* ==========================
-   SLIDES
-========================== */
-
-.slide{
-    width:100vw;
-    height:650px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 8%;
-    flex-shrink:0;
-}
-
-/* Banner 1 */
-
-.slide:nth-child(1){
-    background:#ffd4e5;
-}
-
-/* Banner 2 */
-
-.slide:nth-child(2){
-    background:#ffe9bf;
-}
-
-/* Banner 3 */
-
-.slide:nth-child(3){
-    background:#d8b08c;
-}
-
-/* ==========================
-   TEXTO
-========================== */
-
-.texto{
-    width:50%;
-}
-
-.texto span{
-    color:#8a4d30;
-    font-size:22px;
-    font-weight:600;
-}
-
-.texto h1{
-    font-size:65px;
-    color:#4d2d20;
-    margin:20px 0;
-    line-height:1.1;
-}
-
-.texto .h1_esp{
-    font-size:65px;
-    color:#f5f3f3;
-    margin:20px 0;
-    line-height:1.1;
-}
-
-.texto p{
-    color:#5e4b44;
-    font-size:20px;
-    margin-bottom:35px;
-}
-.texto .p-branco{
-    color:#ffffff;
-}
-.botao{
-    display:inline-block;
-    background:#ff6ea9;
-    color:white;
-    text-decoration:none;
-    padding:16px 40px;
-    border-radius:40px;
-    font-size:18px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.botao:hover{
-    background:#ff4f95;
-    transform:translateY(-4px);
-}
-
-/* ==========================
-   IMAGEM
-========================== */
-
-.imagem{
-    width:45%;
-    display:flex;
-    justify-content:center;
-
-}
-
-.imagem img{
-    width:520px;
-    max-width:100%;
-  
-}
-
-.ana{
-     background-image: url('cookieBanner.png');
-}
-
-/* ==========================
-   SETAS
-========================== */
-
-.prev,
-.next{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    cursor:pointer;
-    font-size:25px;
-    color:#6d4b3c;
-    transition:.3s;
-}
-
-.prev:hover,
-.next:hover{
-    background:#ff6ea9;
-    color:white;
-}
-
-.prev{
-    left:30px;
-}
-
-.next{
-    right:30px;
-}
-
-/* ==========================
-   DOTS
-========================== */
-
-.dots{
-    position:absolute;
-    bottom:35px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:12px;
-}
-
-.dot{
-    width:14px;
-    height:14px;
-    border-radius:50%;
-    background:white;
-}
-
-.dot.active{
-    background:#ff6ea9;
-}
-
-/* ==========================
-   RESPONSIVO
-========================== */
-
-@media(max-width:900px){
-
-    header{
-        padding:20px;
-    }
-
-    .slide{
-        flex-direction:column;
-        justify-content:center;
-        text-align:center;
-    }
-
-    .texto,
-    .imagem{
-        width:100%;
-    }
-
-    .texto h1{
-        font-size:45px;
-    }
-
-    .imagem img{
-        width:320px;
-        margin-top:40px;
-    }
-
-    nav ul{
-        gap:18px;
-    }
-
-}
-/* ====== COOKIE CARD ====== */
-
-.cookie-card{
-    width:100%;
-    padding:70px 0;
-    display:flex;
-    justify-content:center;
-    position:relative;
-}
-
-/* Cores diferentes para cada card */
-
-.cookie-card:nth-child(2) .cookie-box{
-    background:#F8AFC2;
-}
-
-.cookie-card:nth-child(3) .cookie-box{
-    background:#fecadd;
-}
-
-.cookie-card:nth-child(4) .cookie-box{
-    background:#c1dbec;
-}
-
-.cookie-card:nth-child(5) .cookie-box{
-    background:#e6ebc6;
-}
-
-.cookie-card:nth-child(6) .cookie-box{
-    background:#eee7fc;
-}
-
-.cookie-card:nth-child(7) .cookie-box{
-    background:#fce0c7;
-}
-.cookie-card:last-of-type{
-    padding-bottom:20px;
-}
-.cookie-box{
-    width:90%;
-    height:430px;
-    border-radius:40px;
-    padding:60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    
-}
-.cookie-texto{
-    width:55%;
-    z-index:2;
-
-}
-
-.cookie-texto_esq{
-    width:55%;
-    z-index:2;
-    margin-left: 50%;
-}
-
-.tag{
-    display:inline-block;
-    background:white;
-    color:#444;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:600;
-    margin-bottom:25px;
-}
-
-.cookie-texto h2{
-    font-size:60px;
-    line-height:65px;
-    color:#222;
-    margin-bottom:25px;
-}
-.cookie-texto_esq h2{
-    font-size:60px;
-    line-height:65px;
-     color:#222;
-    margin-bottom:25px;
-}
-.cookie-texto_esq p{
-    width:90%;
-    font-size:18px;
-    line-height:30px;
-    color:#444;
-    margin-bottom:35px;
-}
-
-.botoes{
-    display:flex;
-    gap:20px;
-}
-
-.btn-claro{
-    background:white;
-    color:#222;
-    text-decoration:none;
-    padding:18px 35px;
-    border-radius:40px;
-    font-weight:600;
-}
-
-.btn-rosa{
-    background:#222;
-    color:white;
-    text-decoration:none;
-    padding:18px 35px;
-    border-radius:40px;
-    font-weight:600;
-}
-
-.cookie-img{
-    position:absolute;
-    right:120px;
-    top:50%;
-    transform:translateY(-50%) rotate(-10deg);
-    width:380px;
-    height:auto;
-    z-index:1;
-}
-
-.cookie-img_esq{
-    position:absolute;
-    right:1000px;
-    top:50%;
-    transform:translateY(-50%) rotate(-10deg);
-    width:380px;
-    height:auto;
-    z-index:1;
-}
-
-.amarelo{
-    background:#FFE08A;
-}
-
-.verde{
-    background:#BDECB6;
-}
-
-.azul{
-    background:#BFDFFF;
-}
-
-.bege{
-    background:#F7D8A8;
-}
-
-.rosa{
-    background:#F8B5C8;
-}
-
-.esquerda{
-    left:-40px;
-    right:auto;
-    transform:translateY(-50%) rotate(10deg);
-}
-/* ==========================
-   FOOTER
-========================== */
-
-.footer{
-    background:#f3b2c9;
-    color:white;
-    margin-top:80px;
-}
-
-.footer-container{
-    width:90%;
-    margin:auto;
-    padding:60px 0;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:50px;
-}
-
-.footer-logo img{
-    width:140px;
-    margin-bottom:20px;
-}
-
-.footer-logo p{
-    color:#4d2d20;
-    line-height:28px;
-}
-
-.footer h3{
-    margin-bottom:20px;
-    color:#4d2d20;
-}
-
-.footer ul{
-    list-style:none;
-}
-
-.footer ul li{
-    margin-bottom:12px;
-}
-
-.footer a{
-    color:#4d2d20;
-    text-decoration:none;
-    display:block;
-    margin-bottom:12px;
-    transition:.3s;
-}
-
-.footer a:hover{
-    color:#fe85c0;
-}
-
-.footer-contato p{
-    margin-bottom:12px;
-    color:#4d2d20;
-}
-
-.footer-copy{
-    border-top:1px solid rgba(255,255,255,.2);
-    text-align:center;
-    padding:20px;
-    color:#4d2d20;
-    font-size:14px;
-}
-
-/* Responsivo */
-
-@media(max-width:900px){
-
-    .footer-container{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .footer-logo img{
-        margin:auto;
-        margin-bottom:20px;
-    }
-
-}
-
-/* Oculta os botões do mobile na tela grande */
 .menu-toggle, .menu-icon {
     display: none;
 }
 
-/* --- RESPONSIVIDADE (Telas de até 768px) --- */
-@media (max-width: 768px) {
+/* ==========================
+   BANNER & CARROSSEL (CORRIGIDO)
+========================== */
+
+.banner {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* O container precisa ter 400% de largura para abrigar 4 slides de 100% da tela */
+.slider {
+    display: flex;
+    width: 400%; 
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Cada slide ocupa exatamente 1/4 (25%) do slider, totalizando 100% da viewport */
+.slide {
+    width: 25%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Ajusta a imagem sem distorcer ou cortar a composição principal */
+}
+
+/* ==========================
+   RESPONSIVO DO BANNER
+========================== */
+
+@media (max-width: 900px) {
+    .banner {
+        height: 480px;
+    }
+
+    .slide {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 5% 20px 5%;
+    }
+}
+
+.ana {
+    background-image: url('cookieBanner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.texto {
+    width: 70%;
+}
+
+.texto span {
+    color: #8a4d30;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.texto h1, .texto .h1_esp {
+    font-size: 65px;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.texto h1 { color: #4d2d20; }
+.texto .h1_esp { color: #f5f3f3; }
+
+.texto p {
+    color: #5e4b44;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.texto .p-branco {
+    color: #ffffff;
+}
+
+.botao {
+    display: inline-block;
+    background: #ff6ea9;
+    color: white;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #ff4f95;
+    transform: translateY(-4px);
+}
+
+.imagem {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem img {
+    width: 520px;
+    max-width: 100%;
+}
+
+/* Controls */
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    font-size: 25px;
+    color: #6d4b3c;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: #ff6ea9;
+    color: white;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+.dots {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+}
+
+.dot.active {
+    background: #ff6ea9;
+}
+
+
+/* ==========================
+   COOKIE CARDS & CORES (DESKTOP)
+========================== */
+
+.cookie-card {
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cookie-box {
+    width: 90%;
+    min-height: 430px;
+    border-radius: 40px;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #F8AFC2; /* Cor padrão do card 1 */
+}
+
+/* CORES DOS CARDS */
+.cookie-box.amarelo { background: #FFE08A; }
+.cookie-box.verde   { background: #BDECB6; }
+.cookie-box.azul    { background: #BFDFFF; }
+.cookie-box.bege    { background: #F7D8A8; }
+.cookie-box.rosa    { background: #F8B5C8; }
+
+.cookie-texto {
+    width: 55%;
+    z-index: 2;
+}
+
+/* TAMANHO DOS TEXTOS NO DESKTOP */
+.cookie-texto h2 {
+    font-size: 60px;
+    line-height: 65px;
+    color: #222;
+    margin-bottom: 25px;
+}
+
+.cookie-texto p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.tag {
+    display: inline-block;
+    background: white;
+    color: #444;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* IMAGEM NO DESKTOP */
+.cookie-img {
+    max-width: 380px;
+    width: 40%;
+    height: auto;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+/* INVERSÃO DOS CARDS 2 E 4 NO DESKTOP */
+.cookie-card.reverse .cookie-box {
+    flex-direction: row-reverse;
+}
+
+/* ==========================
+   RESPONSIVO (MOBILE)
+========================== */
+
+@media (max-width: 900px) {
+
+    /* Cards em coluna no celular */
+    .cookie-box, 
+    .cookie-card.reverse .cookie-box {
+        flex-direction: column-reverse !important;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .cookie-texto {
+        width: 100%;
+    }
+
+    /* REDUÇÃO EXCLUSIVA PARA O MOBILE */
+    .cookie-texto h2 {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 15px;
+    }
+
+    .cookie-texto p {
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .tag {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-bottom: 15px;
+    }
+
+    /* Imagem no celular */
+    .cookie-img {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 20px;
+        position: static !important;
+        transform: none !important;
+    }
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+    background: #f3b2c9;
+    color: white;
+    margin-top: 80px;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-logo img {
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+.footer-logo p, .footer h3, .footer-contato p, .footer-copy {
+    color: #4d2d20;
+}
+
+.footer h3 { margin-bottom: 20px; }
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 12px; }
+
+.footer a {
+    color: #4d2d20;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer a:hover { color: #fe85c0; }
+
+.footer-copy {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media (max-width: 900px) {
+    header { padding: 15px 5%; }
+
     .menu-icon {
         display: block;
         font-size: 28px;
         cursor: pointer;
         user-select: none;
+        color: #5a3726;
     }
 
     nav {
-        display: none; /* Esconde o menu no mobile */
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -545,14 +424,51 @@ nav a:hover{
         text-align: center;
     }
 
-    /* Mostra o menu quando o ícone for clicado */
     .menu-toggle:checked ~ nav {
         display: block;
     }
 
-    /* Garante alinhamento do header no celular */
-    header {
+    .slide {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .texto, .imagem { width: 100%; }
+
+    .texto h1 { font-size: 40px; }
+
+    .imagem img {
+        width: 280px;
+        margin-top: 20px;
+    }
+
+    .cookie-box {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .cookie-texto { width: 100%; }
+
+    .cookie-img {
         position: relative;
+        right: auto;
+        left: auto;
+        top: auto;
+        transform: none;
+        max-width: 250px;
+        margin-top: 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        margin: 0 auto 20px;
     }
 }
-
