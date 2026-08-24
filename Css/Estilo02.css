@@ -1,0 +1,45 @@
+.{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 80px 200px 100px 80px;
+    gap: 15px;
+    background-color: pink;
+    padding: 20px;
+    border-radius: 4px;
+}
+.topo{
+    background-color: chocolate;
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+.lateral{
+    background-color:aliceblue;
+    grid-column: 1;
+    grid-row: 2 / 4;
+}
+.centro{
+    background-color: brown;
+    grid-column: 2 / 4;
+    grid-row: 2;
+}
+.vermelho{
+    background-color: rgb(247, 242, 159);
+    grid-column: 2;
+    grid-row: 3;
+}
+.laranja-baixo{
+    background-color: aquamarine;
+    grid-column: 3;
+    grid-row: 3;
+}
+.marrom{
+    background-color: antiquewhite;
+    grid-column: 1/4;
+    grid-row: 4;
+}

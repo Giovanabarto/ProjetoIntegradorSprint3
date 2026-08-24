@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contato | O Cantinho do Cookie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:#fff8fa;
+            color:#222;
+        }
+
+        /* ================= HEADER ================= */
+
+        header{
+            width:100%;
+            padding:18px 7%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:white;
+            box-shadow:0 2px 15px rgba(0,0,0,.08);
+        }
+
+        .logo img{
+            width:110px;
+        }
+
+        nav ul{
+            display:flex;
+            gap:35px;
+            list-style:none;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:#4d2d20;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#ff6ea9;
+        }
+
+        /* ================= CONTATO ================= */
+
+        .contato{
+            width:90%;
+            max-width:1200px;
+            margin:70px auto;
+            padding:60px;
+
+            display:grid;
+            grid-template-columns:1fr 1.2fr;
+            gap:60px;
+
+            background:#ffd4e5;
+            border-radius:40px;
+        }
+
+        /* ================= TEXTO ================= */
+
+        .contato-texto{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .tag{
+            display:inline-block;
+            width:max-content;
+            background:white;
+            color:#5a3726;
+            padding:10px 22px;
+            border-radius:30px;
+            font-weight:600;
+            margin-bottom:20px;
+        }
+
+        .contato-texto h1{
+            font-size:55px;
+            line-height:1.1;
+            color:#3d2923;
+            margin-bottom:20px;
+        }
+
+        .contato-texto h1 span{
+            color:#ff5797;
+        }
+
+        .contato-texto > p{
+            color:#5e4b44;
+            line-height:1.7;
+            margin-bottom:30px;
+            font-size:17px;
+        }
+
+        /* ================= INFORMAÇÕES ================= */
+
+        .informacoes{
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+
+        .info{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .icone{
+            width:45px;
+            height:45px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:white;
+            border-radius:50%;
+
+            font-size:20px;
+        }
+
+        .info h3{
+            font-size:15px;
+            color:#3d2923;
+        }
+
+        .info p{
+            font-size:14px;
+            color:#6b5555;
+        }
+
+        /* ================= FORMULÁRIO ================= */
+
+        .formulario{
+            background:white;
+            padding:40px;
+            border-radius:30px;
+            box-shadow:0 8px 25px rgba(0,0,0,.08);
+        }
+
+        .formulario h2{
+            font-size:30px;
+            color:#3d2923;
+            margin-bottom:25px;
+        }
+
+        .campo{
+            margin-bottom:18px;
+        }
+
+        .campo label{
+            display:block;
+            font-size:14px;
+            font-weight:600;
+            color:#4d2d20;
+            margin-bottom:7px;
+        }
+
+        .campo input,
+        .campo textarea{
+            width:100%;
+            padding:14px 16px;
+
+            border:2px solid #f0dce3;
+            border-radius:15px;
+
+            outline:none;
+            font-size:14px;
+
+            transition:.3s;
+        }
+
+        .campo input:focus,
+        .campo textarea:focus{
+            border-color:#ff8bb5;
+        }
+
+        .campo textarea{
+            height:120px;
+            resize:none;
+        }
+
+        .enviar{
+            width:100%;
+            border:none;
+            padding:15px;
+
+            border-radius:30px;
+
+            background:#222;
+            color:white;
+
+            font-size:15px;
+            font-weight:600;
+
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .enviar:hover{
+            background:#ff6ea9;
+            transform:translateY(-2px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer{
+            background:#f3a9c3;
+            padding:30px;
+            text-align:center;
+            color:#4d2d20;
+        }
+
+        /* ================= RESPONSIVO ================= */
+
+        @media(max-width:850px){
+
+            header{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            nav ul{
+                gap:15px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .contato{
+                grid-template-columns:1fr;
+                padding:35px;
+            }
+
+            .contato-texto h1{
+                font-size:45px;
+            }
+
+        }
+
+        @media(max-width:500px){
+
+            .contato{
+                width:94%;
+                padding:25px;
+            }
+
+            .formulario{
+                padding:25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <img src="img projeto integrador/logo cantinho do cookie.png" alt="O Cantinho do Cookie">
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Início</a></li>
+
+                <li><a href="Sobrenós.html">Sobre</a></li>
+
+                <li><a href="Cardapio.html">Cardápio</a></li>
+
+                <li><a href="Espaçofilmes.html">Espaço</a></li>
+
+                <li><a href="Contato.html">Contato</a></li>
+
+                 <li><a href="Avaliações.html">Avaliações</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= CONTATO ================= -->
+
+    <main>
+
+        <section class="contato">
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="contato-texto">
+
+                <span class="tag">💌 Fale com a gente</span>
+
+                <h1>
+                    Entre em<br>
+                    <span>contato!</span>
+                </h1>
+
+                <p>
+                    Ficou com alguma dúvida, quer fazer um pedido ou
+                    simplesmente mandar uma mensagem?
+                    Estamos aqui para conversar com você!
+                </p>
+
+
+                <div class="informacoes">
+
+                    <div class="info">
+
+                        <div class="icone">📍</div>
+
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>Santa Cruz do Rio Pardo - SP</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <div class="icone">📞</div>
+
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(14) 99999-9999</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <div class="icone">✉️</div>
+
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@cantinhodocookie.com</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <div class="icone">📷</div>
+
+                        <div>
+                            <h3>Instagram</h3>
+                            <p>@cantinhodocookie</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <div class="formulario">
+
+                <h2>Envie uma mensagem 🍪</h2>
+
+                <form>
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="telefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            placeholder="(00) 00000-0000"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="mensagem">
+                            Mensagem
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            placeholder="Escreva sua mensagem..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="enviar">
+                        Enviar mensagem 💗
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 O Cantinho do Cookie — Feito com carinho 🍪
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

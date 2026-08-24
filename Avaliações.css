@@ -1,0 +1,358 @@
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff8fa;
+    color:#333;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:white;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.logo img{
+    width:110px;
+}
+
+nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#4d2d20;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff5797;
+}
+
+
+/* ================= CAPA ================= */
+
+.capa-avaliacoes{
+
+    text-align:center;
+
+    padding:90px 20px 80px;
+
+    background:#ffd4e5;
+}
+
+.capa-avaliacoes span{
+
+    display:inline-block;
+
+    background:white;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    color:#5a3726;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+}
+
+.capa-avaliacoes h1{
+
+    font-size:55px;
+
+    line-height:1.15;
+
+    color:#4d2d20;
+
+    margin-bottom:20px;
+}
+
+.capa-avaliacoes strong{
+    color:#ff5797;
+}
+
+.capa-avaliacoes p{
+
+    color:#684f48;
+
+    font-size:18px;
+}
+
+
+/* ================= AVALIAÇÕES ================= */
+
+.avaliacoes{
+
+    padding:80px 7%;
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.titulo span{
+
+    font-size:35px;
+}
+
+.titulo h2{
+
+    font-size:40px;
+
+    color:#4d2d20;
+
+    margin:10px 0;
+}
+
+.titulo p{
+
+    color:#725f59;
+
+    font-size:16px;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards-avaliacoes{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+
+.avaliacao{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.avaliacao:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+
+/* ================= ESTRELAS ================= */
+
+.estrelas{
+
+    color:#ffc83d;
+
+    font-size:22px;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+
+/* ================= TEXTO ================= */
+
+.avaliacao > p{
+
+    color:#5d514d;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    min-height:105px;
+
+    margin-bottom:25px;
+}
+
+
+/* ================= CLIENTE ================= */
+
+.cliente{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    border-top:1px solid #eee;
+
+    padding-top:20px;
+}
+
+.avatar{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#ffb5ce;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+}
+
+.cliente h3{
+
+    color:#4d2d20;
+
+    font-size:16px;
+}
+
+.cliente span{
+
+    color:#999;
+
+    font-size:13px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#f3a9c3;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    color:#4d2d20;
+}
+
+.footer-logo img{
+
+    width:110px;
+
+    margin-bottom:15px;
+}
+
+footer p{
+
+    max-width:500px;
+
+    margin:0 auto 15px;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+footer span{
+
+    font-size:13px;
+}
+
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:950px){
+
+    .cards-avaliacoes{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .capa-avaliacoes h1{
+
+        font-size:45px;
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    nav ul{
+
+        gap:12px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .cards-avaliacoes{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .capa-avaliacoes h1{
+
+        font-size:36px;
+
+    }
+
+    .titulo h2{
+
+        font-size:30px;
+
+    }
+
+}

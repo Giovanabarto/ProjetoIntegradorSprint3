@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cardápio | O Cantinho do Cookie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #fff8fa;
+            color: #222;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, .08);
+        }
+
+        .logo img {
+            width: 110px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4d2d20;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #ff6ea9;
+        }
+
+        /* ================= TÍTULO ================= */
+
+        .titulo-cardapio {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #ffd4e5;
+            color: #5a3726;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .titulo-cardapio h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .titulo-cardapio h1 span {
+            color: #ff6ea9;
+        }
+
+        .titulo-cardapio p {
+            font-size: 18px;
+            color: #6b5555;
+        }
+
+        /* ================= CARDÁPIO ================= */
+
+        .cardapio {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto 80px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* ================= CARD ================= */
+
+        .produto {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+            transition: .3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+        }
+
+        .produto-imagem {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .produto-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: .3s;
+        }
+
+        .produto:hover .produto-imagem img {
+            transform: scale(1.08);
+        }
+
+        .produto-info {
+            padding: 25px;
+        }
+
+        .produto-info h2 {
+            font-size: 25px;
+            color: #3d2923;
+            margin-bottom: 10px;
+        }
+
+        .produto-info p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #6b5a55;
+            margin-bottom: 20px;
+        }
+
+        .produto-baixo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .preco {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ff5d9c;
+        }
+
+        .pedido {
+            background: #222;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .pedido:hover {
+            background: #ff6ea9;
+        }
+
+        /* ================= CORES DOS CARDS ================= */
+
+        .rosa {
+            background: #ffe0eb;
+        }
+
+        .amarelo {
+            background: #ffe8a8;
+        }
+
+        .verde {
+            background: #d8f3d2;
+        }
+
+        .azul {
+            background: #d8ecff;
+        }
+
+        .bege {
+            background: #f9dfc4;
+        }
+
+        .roxo {
+            background: #e8dcff;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #f3a9c3;
+            padding: 30px;
+            text-align: center;
+            color: #4d2d20;
+        }
+
+        /* ================= RESPONSIVO ================= */
+
+        @media(max-width:900px) {
+
+            .cardapio {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .titulo-cardapio h1 {
+                font-size: 45px;
+            }
+
+        }
+
+        @media(max-width:600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .cardapio {
+                grid-template-columns: 1fr;
+            }
+
+            .titulo-cardapio h1 {
+                font-size: 40px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <img src="img projeto integrador/logo cantinho do cookie.png" alt="O Cantinho do Cookie">
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Início</a></li>
+
+                <li><a href="Sobrenós.html">Sobre</a></li>
+
+                <li><a href="Cardapio.html">Cardápio</a></li>
+
+                <li><a href="Espaçofilmes.html">Espaço</a></li>
+
+                <li><a href="Contato.html">Contato</a></li>
+
+                <li><a href="Avaliações.html">Avaliações</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= TÍTULO ================= -->
+
+    <section class="titulo-cardapio">
+
+        <span class="tag">🍪 Nossos sabores</span>
+
+        <h1>
+            Escolha seu <span>cookie favorito!</span>
+        </h1>
+
+        <p>
+            Cookies artesanais preparados com muito carinho para você.
+        </p>
+
+    </section>
+
+
+    <!-- ================= PRODUTOS ================= -->
+
+    <main class="cardapio">
+
+
+        <!-- COOKIE 1 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem rosa">
+
+                <img src="img projeto integrador/Frutas vermelhas.png" alt="Cookie de Frutas Vermelhas">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Frutas Vermelhas</h2>
+
+                <p>
+                    Cookie amanteigado recheado com creme de frutas vermelhas
+                    e finalizado com morangos.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 10,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- COOKIE 2 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem amarelo">
+
+                <img src="img projeto integrador/Cookie Brownie.png" alt="Cookie Brownie">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Cookie Brownie</h2>
+
+                <p>
+                    Cookie de chocolate com recheio cremoso de brigadeiro
+                    e pedaços de brownie.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 10,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- COOKIE 3 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem verde">
+
+                <img src="img projeto integrador/Limão.png" alt="Cookie de Limão">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Cookie Limão</h2>
+
+                <p>
+                    Massa amanteigada com creme de limão e uma delicada
+                    cobertura cítrica.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 9,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- COOKIE 4 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem azul">
+
+                <img src="img projeto integrador/Cookie cream.png" alt="Cookies and Cream">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Cookies & Cream</h2>
+
+                <p>
+                    Recheado com creme de baunilha e pedaços crocantes
+                    de biscoito de chocolate.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 10,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- COOKIE 5 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem bege">
+
+                <img src="img projeto integrador/Paçoca.png" alt="Cookie de Paçoca">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Cookie Paçoca</h2>
+
+                <p>
+                    Cookie macio recheado com creme de paçoca e
+                    farofa crocante.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 9,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- COOKIE 6 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem roxo">
+
+                <img src="img projeto integrador/Cookie de Baunilha.png" alt="Cookie de Baunilha">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Cookie Baunilha</h2>
+
+                <p>
+                    Cookie delicado de baunilha com recheio cremoso
+                    e cobertura especial.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 9,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+    </main>
+
+    <!-- ================= TÍTULO ================= -->
+
+    <section class="titulo-cardapio">
+
+        <h1>
+            Escolha seu <span>Milk Shake favorito!</span>
+        </h1>
+
+        <p>
+            Cremosos, irresistíveis e perfeitos para deixar seu momento ainda mais gostoso.
+        </p>
+
+    </section>
+    <main class="cardapio">
+
+        <!-- MILK SHAKE 1 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem rosa">
+
+                <img src="img projeto integrador/Milk shake morango.png" alt="Milk Shake de Morango">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Milk Shake de Morango</h2>
+
+                <p>
+                    Milk shake cremoso de morango, preparado com sorvete
+                    e finalizado com uma deliciosa cobertura.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 15,00</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MILK SHAKE 2 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem amarelo">
+
+                <img src="img projeto integrador/Milk shake chocolate.png" alt="Milk Shake de Chocolate">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Milk Shake de Chocolate</h2>
+
+                <p>
+                    Milk shake cremoso de chocolate com cobertura especial
+                    e muito sabor.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 15,00</span>
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+        <!-- MILK SHAKE 3 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem azul">
+
+                <img src="img projeto integrador/Milk shake oreo.png" alt="Milk Shake de Oreo">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Milk Shake de Oreo</h2>
+
+                <p>
+                    Milk shake cremoso de baunilha com pedaços de biscoito
+                    de chocolate e cobertura especial.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 16,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- MILK SHAKE 4 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem bege">
+
+                <img src="img projeto integrador/Milk shake doce de leite.png" alt="Milk Shake de Oreo">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Milk Shake de Doce de Leite</h2>
+
+                <p>
+                    Milk shake cremoso de doce de leite, preparado com sorvete de baunilha e finalizado com calda de
+                    doce de leite e chantilly.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 16,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- MILK SHAKE 5 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem verde">
+
+                <img src="img projeto integrador/pistache.png" alt="Milk Shake de Pistache">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Milk Shake de Pistache</h2>
+
+                <p>
+                    Milk shake cremoso preparado com sorvete e sabor marcante de pistache, finalizado com cobertura
+                    especial e pedaços de pistache.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 15,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- MILK SHAKE 6 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem rosa">
+
+                <img src="img projeto integrador/Milk shake oreo.png" alt="Milk Shake de Maracujá">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Milk Shake de Maracujá</h2>
+
+                <p>
+                    Milk shake cremoso de maracujá, com sabor refrescante e levemente cítrico, finalizado com uma
+                    deliciosa cobertura especial.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 15,00</span>
+                </div>
+
+            </div>
+
+        </article>
+    </main>
+
+        <!-- ================= TÍTULO ================= -->
+
+        <section class="titulo-cardapio">
+
+            <h1>
+                Escolha sua <span>Soda Italiana favorita!</span>
+            </h1>
+
+            <p>
+                As sodas italianas são bebidas refrescantes preparadas com água com gás e sabores de frutas, criando uma
+                combinação leve, colorida e saborosa.
+            </p>
+
+        </section>
+         <!-- ================= PRODUTOS ================= -->
+
+    <main class="cardapio">
+
+
+        <!-- Soda italiana 1 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem verde">
+
+                <img src="img projeto integrador/Soda italiana kiwi.png" alt="Soda italiana de Kiwi">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Soda de Kiwi</h2>
+
+                <p>
+                    Soda italiana refrescante com sabor marcante de kiwi, combinando água com gás e um toque frutado.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 12,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Soda italiana  2 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem rosa">
+
+                <img src="img projeto integrador/Soda italiana de frutas vermelhas.png" alt="Soda de Frutas Vermelhas">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Soda de Frutas Vermelhas</h2>
+
+                <p>
+                    Uma combinação deliciosa de frutas vermelhas, com sabor adocicado e refrescante, perfeita para qualquer momento.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 12,00</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Soda italiana  3 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem amarelo">
+
+                <img src="img projeto integrador/Soda italiana de laranja.png" alt="Soda de Laranja">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Soda de Laranja</h2>
+
+                <p>
+                    Soda italiana refrescante com sabor cítrico e vibrante de laranja, trazendo leveza e muito sabor.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 12,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Soda italiana  4 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem azul">
+
+                <img src="img projeto integrador/Soda italiana ice blue.png" alt="Soda ice blue">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Soda Ice Blue</h2>
+
+                <p>
+                    Uma soda italiana refrescante, com sabor doce e marcante e uma cor azul vibrante que deixa a bebida ainda mais especial.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 12,00</span>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Soda italiana  5 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem roxo">
+
+                <img src="img projeto integrador/Soda italiana de blueberry.png" alt="Soda de Blueberry">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Soda de Blueberry</h2>
+
+                <p>
+                    Soda italiana com sabor de blueberry, trazendo uma combinação equilibrada entre o frutado e o refrescante.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 12,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- Soda italiana  6 -->
+
+        <article class="produto">
+
+            <div class="produto-imagem bege">
+
+                <img src="img projeto integrador/Soda italiana de Pêssego.png" alt="Soda de Pêssego">
+
+            </div>
+
+            <div class="produto-info">
+
+                <h2>Soda de Pêssego</h2>
+
+                <p>
+                    Uma soda italiana delicada e refrescante, com sabor suave e adocicado de pêssego.
+                </p>
+
+                <div class="produto-baixo">
+
+                    <span class="preco">R$ 12,00</span>
+
+                </div>
+
+            </div>
+
+        </article>
+    </main>
+        
+
+
+    
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 O Cantinho do Cookie — Feito com carinho 🍪
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

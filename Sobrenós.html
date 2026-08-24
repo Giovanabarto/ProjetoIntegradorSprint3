@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre Nós | O Cantinho do Cookie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#fff;
+            color:#222;
+        }
+
+        /* ================= HEADER ================= */
+
+        header{
+            width:100%;
+            padding:18px 7%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#fff;
+            box-shadow:0 2px 15px rgba(0,0,0,.08);
+        }
+
+        .logo img{
+            width:110px;
+        }
+
+        nav ul{
+            display:flex;
+            gap:35px;
+            list-style:none;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:#4d2d20;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#ff6ea9;
+        }
+
+        /* ================= SOBRE ================= */
+
+        .sobre{
+            min-height:calc(100vh - 80px);
+            padding:70px 8%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:80px;
+
+            background:#fff7f9;
+        }
+
+        .sobre-imagem{
+            width:45%;
+        }
+
+        .sobre-imagem img{
+            width:100%;
+            max-width:450px;
+            border-radius:35px;
+            display:block;
+        }
+
+        .sobre-texto{
+            width:45%;
+        }
+
+        .tag{
+            display:inline-block;
+            background:#ffd4e5;
+            color:#5a3726;
+            padding:10px 22px;
+            border-radius:30px;
+            font-weight:600;
+            margin-bottom:20px;
+        }
+
+        .sobre-texto h1{
+            font-size:60px;
+            line-height:1.1;
+            color:#222;
+            margin-bottom:25px;
+        }
+
+        .sobre-texto h1 span{
+            color:#ff6ea9;
+        }
+
+        .sobre-texto p{
+            font-size:18px;
+            line-height:1.8;
+            color:#5e4b44;
+            margin-bottom:18px;
+        }
+
+        .botao{
+            display:inline-block;
+            margin-top:15px;
+            padding:15px 30px;
+            border-radius:40px;
+            background:#222;
+            color:white;
+            text-decoration:none;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        .botao:hover{
+            background:#ff6ea9;
+            transform:translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer{
+            background:#f3a9c3;
+            padding:30px;
+            text-align:center;
+            color:#4d2d20;
+        }
+
+        /* ================= RESPONSIVO ================= */
+
+        @media(max-width:900px){
+
+            .sobre{
+                flex-direction:column;
+                text-align:center;
+                gap:40px;
+            }
+
+            .sobre-imagem,
+            .sobre-texto{
+                width:100%;
+            }
+
+            .sobre-texto h1{
+                font-size:45px;
+            }
+
+            nav ul{
+                gap:15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <img src="img projeto integrador/logo cantinho do cookie.png" alt="O Cantinho do Cookie">
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Início</a></li>
+
+                <li><a href="Sobrenós.html">Sobre</a></li>
+
+                <li><a href="Cardapio.html">Cardápio</a></li>
+
+                <li><a href="Espaçofilmes.html">Espaço</a></li>
+
+                <li><a href="Contato.html">Contato</a></li>
+
+                 <li><a href="Avaliações.html">Avaliações</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= SOBRE NÓS ================= -->
+
+    <main>
+
+        <section class="sobre">
+
+            <div class="sobre-imagem">
+
+                <img src="img projeto integrador/Cookie imagem.jpg"
+                     alt="Cookies artesanais">
+
+            </div>
+
+
+            <div class="sobre-texto">
+
+                <span class="tag">🍪 Sobre nós</span>
+
+                <h1>
+                    Um cantinho feito
+                    <span>para você!</span>
+                </h1>
+
+                <p>
+                    O Cantinho do Cookie nasceu do amor por doces,
+                    cookies artesanais e momentos especiais.
+                </p>
+
+                <p>
+                    Cada cookie é preparado com carinho e ingredientes
+                    selecionados para deixar o seu dia ainda mais gostoso.
+                </p>
+
+                <p>
+                    Nosso objetivo é criar um espaço aconchegante onde
+                    você possa aproveitar seus doces favoritos e compartilhar
+                    bons momentos.
+                </p>
+
+                <a href="index.html" class="botao">
+                    Voltar para o início
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 O Cantinho do Cookie — Feito com carinho 🍪
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Espaço | O Cantinho do Cookie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:#fff8fa;
+            color:#222;
+        }
+
+        /* ================= HEADER ================= */
+
+        header{
+            width:100%;
+            padding:18px 7%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:white;
+            box-shadow:0 2px 15px rgba(0,0,0,.08);
+        }
+
+        .logo img{
+            width:110px;
+        }
+
+        nav ul{
+            display:flex;
+            gap:35px;
+            list-style:none;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:#4d2d20;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#ff6ea9;
+        }
+
+        /* ================= BANNER ================= */
+
+        .hero-filmes{
+            min-height:430px;
+            padding:70px 8%;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            background:#ffd4e5;
+        }
+
+        .hero-texto{
+            width:50%;
+        }
+
+        .tag{
+            display:inline-block;
+            background:white;
+            color:#5a3726;
+            padding:10px 22px;
+            border-radius:30px;
+            font-weight:600;
+            margin-bottom:20px;
+        }
+
+        .hero-texto h1{
+            font-size:58px;
+            line-height:1.1;
+            color:#3d2923;
+            margin-bottom:20px;
+        }
+
+        .hero-texto h1 span{
+            color:#ff5797;
+        }
+
+        .hero-texto p{
+            font-size:18px;
+            line-height:1.7;
+            color:#5e4b44;
+        }
+
+        .hero-imagem{
+            width:40%;
+            text-align:center;
+        }
+
+        .hero-imagem img{
+            width:100%;
+            max-width:450px;
+        }
+
+        /* ================= ESPAÇO ================= */
+
+        .titulo{
+            text-align:center;
+            padding:65px 20px 35px;
+        }
+
+        .titulo h2{
+            font-size:45px;
+            color:#3d2923;
+            margin-bottom:10px;
+        }
+
+        .titulo p{
+            color:#6b5555;
+            font-size:17px;
+        }
+
+        /* ================= FILMES ================= */
+
+        .filmes{
+            width:90%;
+            max-width:1250px;
+            margin:0 auto 80px;
+
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:25px;
+        }
+
+        .filme{
+            background:white;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 8px 25px rgba(0,0,0,.08);
+            transition:.3s;
+        }
+
+        .filme:hover{
+            transform:translateY(-8px);
+            box-shadow:0 15px 30px rgba(0,0,0,.13);
+        }
+
+        .filme img{
+            width:100%;
+            height:320px;
+            object-fit:cover;
+            display:block;
+        }
+
+        .filme-info{
+            padding:20px;
+        }
+
+        .filme-info h3{
+            color:#3d2923;
+            font-size:20px;
+            margin-bottom:8px;
+        }
+
+        .filme-info p{
+            color:#76615a;
+            font-size:14px;
+            line-height:1.5;
+            margin-bottom:15px;
+        }
+
+        .botao{
+            display:inline-block;
+            background:#222;
+            color:white;
+            text-decoration:none;
+            padding:10px 20px;
+            border-radius:25px;
+            font-size:14px;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        .botao:hover{
+            background:#ff6ea9;
+        }
+
+        /* ================= EXPERIÊNCIA ================= */
+
+        .experiencia{
+            width:90%;
+            max-width:1000px;
+            margin:0 auto 80px;
+            padding:50px;
+            border-radius:35px;
+            background:#ffe8a8;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:50px;
+        }
+
+        .experiencia-texto{
+            width:55%;
+        }
+
+        .experiencia-texto h2{
+            font-size:40px;
+            color:#3d2923;
+            margin-bottom:15px;
+        }
+
+        .experiencia-texto p{
+            color:#5e4b44;
+            line-height:1.7;
+            margin-bottom:20px;
+        }
+
+        .experiencia-imagem{
+            width:40%;
+            text-align:center;
+        }
+
+        .experiencia-imagem img{
+            width:100%;
+            max-width:400px;
+            border-radius:25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer{
+            background:#f3a9c3;
+            padding:30px;
+            text-align:center;
+            color:#4d2d20;
+        }
+
+        /* ================= RESPONSIVO ================= */
+
+        @media(max-width:1000px){
+
+            .filmes{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+        }
+
+        @media(max-width:700px){
+
+            header{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            nav ul{
+                gap:15px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero-filmes{
+                flex-direction:column;
+                text-align:center;
+                gap:30px;
+            }
+
+            .hero-texto,
+            .hero-imagem{
+                width:100%;
+            }
+
+            .hero-texto h1{
+                font-size:42px;
+            }
+
+            .filmes{
+                grid-template-columns:1fr;
+            }
+
+            .experiencia{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .experiencia-texto,
+            .experiencia-imagem{
+                width:100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <img src="img projeto integrador/logo cantinho do cookie.png" alt="O Cantinho do Cookie">
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Início</a></li>
+
+                <li><a href="Sobrenós.html">Sobre</a></li>
+
+                <li><a href="Cardapio.html">Cardápio</a></li>
+
+                <li><a href="Espaçofilmes.html">Espaço</a></li>
+
+                <li><a href="Contato.html">Contato</a></li>
+
+                 <li><a href="Avaliações.html">Avaliações</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero-filmes">
+
+        <div class="hero-texto">
+
+            <span class="tag">🎬 Nosso espaço</span>
+
+            <h1>
+                Cookies, filmes<br>
+                e <span>momentos especiais!</span>
+            </h1>
+
+            <p>
+                Um cantinho aconchegante para você aproveitar seus
+                cookies favoritos enquanto assiste a um bom filme.
+            </p>
+
+        </div>
+
+        <div class="hero-imagem">
+
+            <img src="img projeto integrador/Espaço Filmes.png"
+                 alt="Espaço de filmes">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FILMES ================= -->
+
+    <section class="titulo">
+
+        <span class="tag">🍿 Sessão de filmes</span>
+
+        <h2>Escolha o que assistir</h2>
+
+        <p>
+            Prepare seu cookie, escolha seu filme e aproveite!
+        </p>
+
+    </section>
+
+
+    <main class="filmes">
+
+
+        <!-- FILME 1 -->
+
+        <article class="filme">
+
+            <img src="img projeto integrador/Filme mufasa.webp"
+                 alt="Filme">
+
+            <div class="filme-info">
+
+                <h3>Filme 1</h3>
+
+                <p>
+                    Uma ótima opção para curtir com seu cookie favorito.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- FILME 2 -->
+
+        <article class="filme">
+
+            <img src="img projeto integrador/Filme zootopia.jpg"
+                 alt="Filme">
+
+            <div class="filme-info">
+
+                <h3>Filme 2</h3>
+
+                <p>
+                    Uma sessão especial para aproveitar com amigos.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- FILME 3 -->
+
+        <article class="filme">
+
+            <img src="img projeto integrador/Filme moana.jpeg"
+                 alt="Filme">
+
+            <div class="filme-info">
+
+                <h3>Filme 3</h3>
+
+                <p>
+                    Escolha seu lugar e aproveite a experiência.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- FILME 4 -->
+
+        <article class="filme">
+
+            <img src="img projeto integrador/Filme homem aranha.avif"
+                 alt="Filme">
+
+            <div class="filme-info">
+
+                <h3>Filme 4</h3>
+
+                <p>
+                    Um filme perfeito para acompanhar aquele cookie.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </main>
+
+
+    <!-- ================= EXPERIÊNCIA ================= -->
+
+    <section class="experiencia">
+
+        <div class="experiencia-texto">
+
+            <span class="tag">🍪 + 🎬</span>
+
+            <h2>Mais que uma doceria!</h2>
+
+            <p>
+                No Cantinho do Cookie, você não vem apenas para comer.
+                Você vem para viver uma experiência.
+            </p>
+
+            <p>
+                Escolha seu cookie, pegue sua bebida favorita,
+                escolha um filme e aproveite nosso espaço.
+            </p>
+
+            <a href="cardapio.html" class="botao">
+                Ver cardápio
+            </a>
+
+        </div>
+
+        <div class="experiencia-imagem">
+
+            <img src="img projeto integrador/Imagem loja.png"
+                 alt="Espaço do Cantinho do Cookie">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 O Cantinho do Cookie — Feito com carinho 🍪
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
