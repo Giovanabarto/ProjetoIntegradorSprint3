@@ -31,7 +31,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    background: rgb(248, 123, 173, 0.15);
+    background: rgb(248, 123, 173, 0.1);
     
    
 }
@@ -86,13 +86,13 @@ nav a:hover {
     width: 25%; 
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: flex-start; /* Alinha o texto à esquerda */
     padding: 0 8%;
     flex-shrink: 0;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; /* Ajusta a imagem sem distorcer ou cortar a composição principal */
+    background-position: center center;
+    background-size: cover;
 }
 
 /* ==========================
@@ -119,9 +119,10 @@ nav a:hover {
 }
 
 .texto {
-    width: 70%;
+    margin-top: 0; /* Removido o -250px que empurrava o conteúdo para fora */
+    max-width: 600px; /* Evita que o texto ocupe toda a largura */
+    z-index: 2;
 }
-
 .texto span {
     color: #8a4d30;
     font-size: 22px;
