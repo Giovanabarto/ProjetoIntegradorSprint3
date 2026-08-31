@@ -482,6 +482,53 @@
     </footer>
 
 
-</body>
+    </footer>
 
+    <script>
+        const formulario = document.querySelector("form");
+        const nome = document.getElementById("nome");
+        const email = document.getElementById("email");
+        const telefone = document.getElementById("telefone");
+        const mensagem = document.getElementById("mensagem");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let valido = true;
+
+            if (nome.value.trim().length < 3) {
+                nome.style.borderColor = "red";
+                valido = false;
+            } else {
+                nome.style.borderColor = "green";
+            }
+
+            if (email.value.trim() === "" || !email.value.includes("@")) {
+                email.style.borderColor = "red";
+                valido = false;
+            } else {
+                email.style.borderColor = "green";
+            }
+
+            if (mensagem.value.trim().length < 10) {
+                mensagem.style.borderColor = "red";
+                valido = false;
+            } else {
+                mensagem.style.borderColor = "green";
+            }
+
+            if (valido) {
+                alert("Mensagem enviada com sucesso! 🍪💗");
+                formulario.reset();
+
+                nome.style.borderColor = "#f0dce3";
+                email.style.borderColor = "#f0dce3";
+                mensagem.style.borderColor = "#f0dce3";
+            } else {
+                alert("Por favor, verifique os campos destacados.");
+            }
+        });
+    </script>
+
+</body>
 </html>
